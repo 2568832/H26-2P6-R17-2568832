@@ -1,4 +1,6 @@
 using System;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Exer02_ListView_LargeIcon
 {
@@ -27,7 +29,20 @@ namespace Exer02_ListView_LargeIcon
         /// </summary>
         private void ChargerListeActeurs()
         {
+            
+            if (!File.Exists("acteurs.txt"))
+            {
+                MessageBox.Show("noooooooooooooon");
 
+            }
+            using (StreamReader fichier = new StreamReader("acteurs.txt"))
+            {
+                while (fichier.EndOfStream)
+                {
+                    string ligne = fichier.ReadLine();
+                    acteurs.Add(ligne);
+                }
+            }
         }
         #endregion
 
@@ -40,7 +55,27 @@ namespace Exer02_ListView_LargeIcon
         /// </summary>
         private void AfficherListeActeurs()
         {
+            lsvActeurs.View = View.LargeIcon;
 
+            ImageList imageList = new ImageList();
+            imageList.ImageSize = new Size(120, 120); 
+            imageList.ColorDepth = ColorDepth.Depth32Bit;
+
+            foreach (string acteur in acteurs)
+            {
+                imageList.Images.Add("text", Image.FromFile($"./Images/Aaron Eckhart.jpg"));
+
+            }
+            lsvActeurs.LargeImageList = imageList;
+
+            for (int i = 0; i < 5; i++)
+            {
+                ListViewItem personne = new ListViewItem("asdasd", "grande planet");
+
+                lsvActeurs.Items.Add(personne);
+            }
+                
+            
         }
         #endregion
 
