@@ -33,18 +33,21 @@
             // 
             // lsvActeurs
             // 
-            lsvActeurs.Location = new Point(0, 0);
+            lsvActeurs.Location = new Point(-2, 0);
+            lsvActeurs.Margin = new Padding(3, 2, 3, 2);
             lsvActeurs.Name = "lsvActeurs";
-            lsvActeurs.Size = new Size(803, 454);
+            lsvActeurs.Size = new Size(703, 342);
             lsvActeurs.TabIndex = 0;
             lsvActeurs.UseCompatibleStateImageBehavior = false;
+            lsvActeurs.SelectedIndexChanged += lsvActeurs_SelectedIndexChanged;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(lsvActeurs);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);

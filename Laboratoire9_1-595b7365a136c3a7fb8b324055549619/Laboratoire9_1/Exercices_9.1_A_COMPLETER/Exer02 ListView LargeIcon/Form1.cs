@@ -40,9 +40,13 @@ namespace Exer02_ListView_LargeIcon
         /// </summary>
         private void AfficherListeActeurs()
         {
-            
+
         }
         #endregion
 
+        private void lsvActeurs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
